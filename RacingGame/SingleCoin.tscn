@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/SFX/Pickup_Coin1.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/FallGame/Sprites/Coin.png" type="Texture" id=2]
+[ext_resource path="res://RacingGame/SingleCoin.gd" type="Script" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 20.069
+
+[node name="SingleCoin" type="Node2D"]
+z_index = 2
+script = ExtResource( 5 )
+
+[node name="CoinArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 17
+
+[node name="Sprite" type="Sprite" parent="CoinArea"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoinArea"]
+shape = SubResource( 1 )
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Pickup1" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 1 )
+bus = "SFX"
+
+[connection signal="body_entered" from="CoinArea" to="." method="_on_CoinArea_body_entered"]

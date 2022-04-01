@@ -1,0 +1,183 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://FallGame/SingleCoin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://FallGame/Coin.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -0.00012207, 6.10352e-05, 0, 0, 0, 0, -1567.12, 0.250839 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 231.19, 9.53766, 0, 0, 0, 0, 89.7227, 112.08, 0, 0, 0, 0, -40.818, 151.056, 0, 0, 0, 0, -153.6, 98.4427, 0, 0, 0, 0, -254.768, 7.5527 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 266.732, 13.6338, 0, 0, 0, 0, 99.9756, 116.863, 0, 0, 0, 0, -23.047, 153.104, 0, 0, 0, 0, -161.118, 101.178, 0, 0, 0, 0, -277.322, 15.7576 )
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 134.818, 2.03229, 0, 0, 0, 0, -1.87939, 0.683777, 0, 0, 0, 0, -138.577, -0.664795 )
+}
+
+[node name="Coin" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 1150, 600 )
+rotation = 0.349066
+curve = SubResource( 1 )
+
+[node name="RockFollow" type="PathFollow2D" parent="Path2D"]
+visible = false
+position = Vector2( -0.00012207, 6.10352e-05 )
+rotation = 3.14143
+
+[node name="RockPath" type="Path2D" parent="Path2D/RockFollow"]
+curve = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CoinFollow1" type="PathFollow2D" parent="Path2D/RockFollow/RockPath"]
+position = Vector2( 231.19, 9.53766 )
+rotation = 2.51438
+
+[node name="SingleCoin" parent="Path2D/RockFollow/RockPath/CoinFollow1" groups=[
+"Rock_Coins",
+] instance=ExtResource( 1 )]
+
+[node name="CoinFollow2" type="PathFollow2D" parent="Path2D/RockFollow/RockPath"]
+position = Vector2( 116.263, 92.8421 )
+rotation = 2.51438
+offset = 142.0
+
+[node name="SingleCoin" parent="Path2D/RockFollow/RockPath/CoinFollow2" groups=[
+"Rock_Coins",
+] instance=ExtResource( 1 )]
+
+[node name="CoinFollow3" type="PathFollow2D" parent="Path2D/RockFollow/RockPath"]
+position = Vector2( -15.9109, 143.619 )
+rotation = 2.85145
+offset = 285.0
+
+[node name="SingleCoin" parent="Path2D/RockFollow/RockPath/CoinFollow3" groups=[
+"Rock_Coins",
+] instance=ExtResource( 1 )]
+
+[node name="CoinFollow4" type="PathFollow2D" parent="Path2D/RockFollow/RockPath"]
+position = Vector2( -145.2, 102.362 )
+rotation = -2.7051
+offset = 426.0
+
+[node name="SingleCoin" parent="Path2D/RockFollow/RockPath/CoinFollow4" groups=[
+"Rock_Coins",
+] instance=ExtResource( 1 )]
+
+[node name="CoinFollow5" type="PathFollow2D" parent="Path2D/RockFollow/RockPath"]
+position = Vector2( -253.844, 8.38309 )
+rotation = -2.40966
+offset = 570.0
+
+[node name="SingleCoin" parent="Path2D/RockFollow/RockPath/CoinFollow5" groups=[
+"Rock_Coins",
+] instance=ExtResource( 1 )]
+
+[node name="BushFollow" type="PathFollow2D" parent="Path2D"]
+visible = false
+position = Vector2( -0.00012207, 6.10352e-05 )
+rotation = 3.14143
+
+[node name="BushPath" type="Path2D" parent="Path2D/BushFollow"]
+curve = SubResource( 3 )
+
+[node name="CoinFollow1" type="PathFollow2D" parent="Path2D/BushFollow/BushPath"]
+position = Vector2( 266.732, 13.6338 )
+rotation = 2.58728
+
+[node name="SingleCoin" parent="Path2D/BushFollow/BushPath/CoinFollow1" groups=[
+"Bush_Coins",
+] instance=ExtResource( 1 )]
+
+[node name="CoinFollow2" type="PathFollow2D" parent="Path2D/BushFollow/BushPath"]
+position = Vector2( 136.554, 94.2196 )
+rotation = 2.58729
+offset = 153.0
+
+[node name="SingleCoin" parent="Path2D/BushFollow/BushPath/CoinFollow2" groups=[
+"Bush_Coins",
+] instance=ExtResource( 1 )]
+
+[node name="CoinFollow3" type="PathFollow2D" parent="Path2D/BushFollow/BushPath"]
+position = Vector2( -6.48833, 148.226 )
+rotation = 2.85511
+offset = 307.0
+
+[node name="SingleCoin" parent="Path2D/BushFollow/BushPath/CoinFollow3" groups=[
+"Bush_Coins",
+] instance=ExtResource( 1 )]
+
+[node name="CoinFollow4" type="PathFollow2D" parent="Path2D/BushFollow/BushPath"]
+position = Vector2( -149.283, 105.629 )
+rotation = -2.78187
+offset = 459.0
+
+[node name="SingleCoin" parent="Path2D/BushFollow/BushPath/CoinFollow4" groups=[
+"Bush_Coins",
+] instance=ExtResource( 1 )]
+
+[node name="CoinFollow5" type="PathFollow2D" parent="Path2D/BushFollow/BushPath"]
+position = Vector2( -276.631, 16.2657 )
+rotation = -2.50769
+offset = 615.0
+
+[node name="SingleCoin" parent="Path2D/BushFollow/BushPath/CoinFollow5" groups=[
+"Bush_Coins",
+] instance=ExtResource( 1 )]
+
+[node name="BirdFollow" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -0.00012207, 6.10352e-05 )
+rotation = 3.14143
+
+[node name="BirdPath" type="Path2D" parent="Path2D/BirdFollow"]
+curve = SubResource( 4 )
+
+[node name="CoinFollow1" type="PathFollow2D" parent="Path2D/BirdFollow/BirdPath"]
+position = Vector2( 134.818, 2.03229 )
+rotation = -3.13173
+
+[node name="SingleCoin" parent="Path2D/BirdFollow/BirdPath/CoinFollow1" groups=[
+"Bird_Coins",
+] instance=ExtResource( 1 )]
+
+[node name="CoinFollow2" type="PathFollow2D" parent="Path2D/BirdFollow/BirdPath"]
+position = Vector2( -1.20584, 0.690421 )
+rotation = -3.13173
+offset = 136.0
+
+[node name="SingleCoin" parent="Path2D/BirdFollow/BirdPath/CoinFollow2" groups=[
+"Bird_Coins",
+] instance=ExtResource( 1 )]
+
+[node name="CoinFollow3" type="PathFollow2D" parent="Path2D/BirdFollow/BirdPath"]
+position = Vector2( -138.378, -0.662837 )
+rotation = -3.13173
+offset = 273.0
+
+[node name="SingleCoin" parent="Path2D/BirdFollow/BirdPath/CoinFollow3" groups=[
+"Bird_Coins",
+] instance=ExtResource( 1 )]
+
+[connection signal="hide_coins" from="." to="Path2D/RockFollow/RockPath/CoinFollow3/SingleCoin" method="_on_Coin_hide_coins"]
+[connection signal="hide_coins" from="." to="Path2D/RockFollow/RockPath/CoinFollow1/SingleCoin" method="_on_Coin_hide_coins"]
+[connection signal="hide_coins" from="." to="Path2D/RockFollow/RockPath/CoinFollow5/SingleCoin" method="_on_Coin_hide_coins"]
+[connection signal="hide_coins" from="." to="Path2D/RockFollow/RockPath/CoinFollow4/SingleCoin" method="_on_Coin_hide_coins"]
+[connection signal="hide_coins" from="." to="Path2D/RockFollow/RockPath/CoinFollow2/SingleCoin" method="_on_Coin_hide_coins"]
+[connection signal="reset_coins" from="." to="Path2D/RockFollow/RockPath/CoinFollow3/SingleCoin" method="_on_Coin_reset_coins"]
+[connection signal="reset_coins" from="." to="Path2D/RockFollow/RockPath/CoinFollow1/SingleCoin" method="_on_Coin_reset_coins"]
+[connection signal="reset_coins" from="." to="Path2D/RockFollow/RockPath/CoinFollow5/SingleCoin" method="_on_Coin_reset_coins"]
+[connection signal="reset_coins" from="." to="Path2D/RockFollow/RockPath/CoinFollow4/SingleCoin" method="_on_Coin_reset_coins"]
+[connection signal="reset_coins" from="." to="Path2D/RockFollow/RockPath/CoinFollow2/SingleCoin" method="_on_Coin_reset_coins"]

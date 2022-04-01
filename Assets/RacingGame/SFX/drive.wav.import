@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/drive.wav-9177aabb34360cf894ce9deb4cf0d58c.sample"
+
+[deps]
+
+source_file="res://Assets/RacingGame/SFX/drive.wav"
+dest_files=[ "res://.import/drive.wav-9177aabb34360cf894ce9deb4cf0d58c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=true
+compress/mode=0

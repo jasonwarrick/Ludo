@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pickup_Coin3.wav-c1f180eeb978d147d851e079a307c13f.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Pickup_Coin3.wav"
+dest_files=[ "res://.import/Pickup_Coin3.wav-c1f180eeb978d147d851e079a307c13f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

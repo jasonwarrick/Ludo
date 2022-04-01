@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hit.wav-c708c76a1ed5ef02f8af1caab4a96e31.sample"
+
+[deps]
+
+source_file="res://Assets/RacingGame/SFX/hit.wav"
+dest_files=[ "res://.import/hit.wav-c708c76a1ed5ef02f8af1caab4a96e31.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
